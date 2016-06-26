@@ -6,21 +6,13 @@
 |int[]  |bigint, int8      |bigint       |signed eight-byte integer          |
 |-------|------------------|-------------|-----------------------------------|
 |       |bigserial, serial8|             |autoincrementing eight-byte integer|
-|-------|------------------|-------------|-----------------------------------|
 |       |bit[]             |             |fixed-length bit string            |
-|-------|------------------|-------------|-----------------------------------|
 |       |bit varying[], varbit|          |variable-length bit string         |
-|-------|------------------|-------------|-----------------------------------|
 |       |boolean, bool     |boolean, bool|logical Boolean (true/false)       |
-|-------|------------------|-------------|-----------------------------------|
 |       |box               |             |rectangular box in the plane       |
-|-------|------------------|-------------|-----------------------------------|
 |       |bytea             |             |binary data ("byte array")         |
-|-------|------------------|-------------|-----------------------------------|
 |varchar2| character varying[], varchar[]|varchar|variable-length character string|
-|-------|------------------|-------------|-----------------------------------|
 |char   |character[], char[]|char        |fixed-length character string      |
-|-------|------------------|-------------|-----------------------------------|
 |       |cidr              |             |IPv4 or IPv6 network address       |
 　	circle	　	circle in the plane
 　	date	　	calendar date (year, month, day)
