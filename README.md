@@ -3,7 +3,7 @@
 
 |Oracle |PostgreSQL        |MySQL        |Description                        |
 |:------|:-----------------|:------------|:----------------------------------|
-|int[]  |bigint, int8      |bigint       |signed eight-byte integer          |
+|int [] |bigint, int8      |bigint       |signed eight-byte integer          |
 |       |bigserial, serial8|             |autoincrementing eight-byte integer|
 |       |bit[]             |             |fixed-length bit string            |
 |       |bit varying[], varbit|          |variable-length bit string         |
@@ -25,14 +25,14 @@
 |       |macaddr           |             |MAC address                        |
 |       |money             |             |currency amount                    |
 |number |numeric[p,s],decimal[p,s]|int   |exact numeric of selectable precision|
-|       |path              |             |geometric path in the plane|
-　	point	　	geometric point in the plane
-　	polygon	　	closed geometric path in the plane
-　	real,float4	　	single precision floating-point number
-int[(n)]	smallint,int2	smallint	signed two-byte integer
-　	serial,serial4	　	autoincrementing four-byte integer
-blob, cblob	text	blob, text	variable-length character string
-　	time [ (p) ] [ without time zone ]	time	time of day
-　	time [ (p) ] with time zone, timetz	　	time of day, including time zone
-　	timestamp [ (p) ] [ without time zone ]	timestamp	date and time
-　	timestamp [ (p) ] with time zone, timestamptz	　	date and time, inc
+|       |path              |             |geometric path in the plane        |
+|       |point             |             |geometric point in the plane       |
+|       |polygon           |             |closed geometric path in the plane |
+|       |real,float4       |             |single precision floating-point number|
+|int [] |smallint,int2     |smallint     |signed two-byte integer            |
+|       |serial,serial4    |             |autoincrementing four-byte integer |
+|blob, cblob|text          |blob, text   |variable-length character string   |
+|       |time [p] [without time zone]|time|time of day                       |
+|       |time [p] with time zone, timetz| |time of day, including time zone  |
+|       |timestamp [p] [without time zone]|timestamp|date and time           |
+|       |timestamp [p] with time zone, timestamptz| |date and time, inc      |
