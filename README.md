@@ -1,6 +1,8 @@
 # study-postgres
 
 
+### Oracle / PostgresSQL / MySQL - Data Type 비교
+
 |Oracle |PostgreSQL        |MySQL        |Description                        |
 |:------|:-----------------|:------------|:----------------------------------|
 |int [] |bigint, int8      |bigint       |signed eight-byte integer          |
