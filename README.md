@@ -4,7 +4,7 @@
 
 ```
 Oracle      PostgreSQL	                            MySQL	                  Description
-int[(n)]    bigint, int8	                          bigint	                signed eight-byte integer
+int[]       bigint, int8                            bigint                  signed eight-byte integer
 　	        bigserial, serial8	　	                                        autoincrementing eight-byte integer
 　	        bit[]	　	                                                      fixed-length bit string
 　	        bit varying[],                          varbit	　	            variable-length bit string
