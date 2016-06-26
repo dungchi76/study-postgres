@@ -1,7 +1,7 @@
 # study-postgres
 
 
-### Oracle / PostgresSQL / MySQL - Data Type 비교
+* Oracle / PostgresSQL / MySQL - Data Type 비교
 
 |Oracle |PostgreSQL        |MySQL        |Description                        |
 |:------|:-----------------|:------------|:----------------------------------|
