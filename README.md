@@ -1,10 +1,12 @@
 # study-postgres
 
 
-
 ```
-Oracle      PostgreSQL	                            MySQL	                  Description
-int[]       bigint, int8                            bigint                  signed eight-byte integer
+|Oracle|PostgreSQL|MySQL|Description|
+|------|----------|-----|------------|
+|int[]|bigint, int8|bigint|signed eight-byte integer|
+|------|----------|-----|------------|
+
 　	        bigserial, serial8	　	                                        autoincrementing eight-byte integer
 　	        bit[]	　	                                                      fixed-length bit string
 　	        bit varying[],                          varbit	　	            variable-length bit string
