@@ -1,6 +1,7 @@
 # study-postgres
 
-### PostgreSQL Query
+
+### 주요 Query
 
 * ***사용자 생성***
 
