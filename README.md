@@ -3,6 +3,7 @@
 ### PostgreSQL Query
 
 * ***사용자 생성***
+
   ```
   > createuser -P username
   
@@ -14,10 +15,25 @@
   ```
 
 * ***DB 생성***
+
+  - Simple 예제
   ```
   > createdb -O username dbname
   
   CREATE DATABASE
+  ```
+  
+  - Full 예제 (Owner, Encoding, Tablespace, Comment, ... 지정 )
+  ```
+  CREATE DATABASE dbname
+    WITH OWNER = username
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'en_US.utf8'
+       LC_CTYPE = 'en_US.utf8'
+       CONNECTION LIMIT = -1;
+
+  COMMENT ON DATABASE postgres IS 'default administrative connection database';
   ```
 
 * ***Table 생성***
@@ -65,7 +81,103 @@
   | boolean/bool                      |true/false   | 
 
 
+* ***Key 만들기***
+
+  - 단일 primary 키 : 설정할 필드에 primary key를 지정.
+
+  ```
+  ...
+    key          char(16)     primary key,
+  ...
+  ```
+
+  - 복수 primary 키: CONSTRAINT를 이용해서 지정
+  ```
+  CREATE TABLE test_db (
+    key         char(16),
+    val1        integer,
+    val2        integer,
+    CONSTRAINT pk_name PRIMARY KEY (
+      key,
+      val1
+    )
+  );
+  ```
+  
+  - Index 추가
+  
+  ```
+  create unique index PK_NAME on test_db (
+    key,
+    val1
+  )
+  ```
+  
+  - Key 삭제
+  
+  ```
+  drop index PK_NAME;
+  ```
+  
+* ***자동 증가 만들기***
+
+  - serial: Column의 자동 증가는가 data type을 serial로 간단히 정의
+  ```
+  create table testa (
+    key          char(16),
+    val1        serial,
+    val2        integer,
+  );
+  ```
+
+  ```
+  insert into testa values('key00A');
+  insert into testa values('key00B');
+
+  key      | val1 | val2 
+  ---------+------+------
+  key00A   |    1 |      
+  key00B   |    2 | 
+  ```
+
+* ***Sequence 만들기***
+
+  - Sequence: 다수의 테이블 및 사용자 임의 증가 시 이용
+  ```
+  create sequence seq;
+  ```
+  
+  - 다음과 같이 만들면 10 ～ 1000000, 10씩 증가하며 최대값이 되면 다시 최소값으로 돌아간다
+  ```
+  create sequence seq
+    increment    10
+    minvalue     10
+    maxvalue     1000000
+    start        10
+    cache        100
+    cycle
+  ;
+  ```
+
+  - 사용 법
+    - nextval(~): 일련 번호 증가
+    - curval(~): 현재 값 가져옴
+  
+  ```
+  insert into testa values ('k001', nextval('seq'), 10);
+  insert into testa values ('k002', nextval('seq'), 10);
+  insert into testa values ('k003', currval('seq'), 10);
+
+   key    | val1 | val2 
+  --------+------+------
+  k001    | 10   |   10 
+  k002    | 20   |   10 
+  k003    | 20   |   10
+  ```
+
+  
 ---------------------------------------------------------------------------------------
+
 ### Oracle / PostgresSQL / MySQL - Data Type 비교
 
 |Oracle |PostgreSQL        |MySQL        |Description                        |
