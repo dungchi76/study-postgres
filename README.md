@@ -3,45 +3,45 @@
 ### PostgreSQL Query
 
 * ***사용자 생성***
-```
-> createuser -P username
-
-Enter password for new user: 
-Enter it again: 
-Shall the new user be allowed to create databases? (y/n) n
-Shall the new user be allowed to create more new users? (y/n) n
-CREATE USER
-```
+  ```
+  > createuser -P username
+  
+  Enter password for new user: 
+  Enter it again: 
+  Shall the new user be allowed to create databases? (y/n) n
+  Shall the new user be allowed to create more new users? (y/n) n
+  CREATE USER
+  ```
 
 * ***DB 생성***
-```
-> createdb -O username dbname
-
-CREATE DATABASE
-```
+  ```
+  > createdb -O username dbname
+  
+  CREATE DATABASE
+  ```
 
 * ***Table 생성***
 
-```
-CREATE TABLE public.table_name
-(
-  key          char(16) PRIMARY KEY,
-  val1        integer not null,
-  val2        integer unique,
-  val3        integer default 0 not null
-)
-``` 
+  ```
+  CREATE TABLE public.table_name
+  (
+    key          char(16) PRIMARY KEY,
+    val1        integer not null,
+    val2        integer unique,
+    val3        integer default 0 not null
+  )
+  ``` 
 
-constraint으로 Primary Key를 설정하거나, 복수의 Primary Key는 아래와 같이 설정
-```
-CREATE TABLE public.table_name
-(
-  key          char(16),
-  val1        integer,
-  val2        integer,
-  CONSTRAINT {primary_key_name} PRIMARY KEY ( {colmun1}, {colmun2} )
-)
-```
+  - constraint으로 Primary Key를 설정하거나, 복수의 Primary Key는 아래와 같이 설정
+  ```
+  CREATE TABLE public.table_name
+  (
+    key          char(16),
+    val1        integer,
+    val2        integer,
+    CONSTRAINT {primary_key_name} PRIMARY KEY ( {colmun1}, {colmun2} )
+  )
+  ```
 
 
 #### Oracle / PostgresSQL / MySQL - Data Type 비교
