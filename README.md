@@ -124,7 +124,7 @@
 
   - serial: Column의 자동 증가는가 data type을 serial로 간단히 정의
   ```
-  create table testa (
+  create table testdb (
     key          char(16),
     val1        serial,
     val2        integer,
@@ -132,8 +132,8 @@
   ```
 
   ```
-  insert into testa values('key00A');
-  insert into testa values('key00B');
+  insert into testdb values('key00A');
+  insert into testdb values('key00B');
 
   key      | val1 | val2 
   ---------+------+------
@@ -165,9 +165,9 @@
     - curval(~): 현재 값 가져옴
   
   ```
-  insert into testa values ('k001', nextval('seq'), 10);
-  insert into testa values ('k002', nextval('seq'), 10);
-  insert into testa values ('k003', currval('seq'), 10);
+  insert into testdb values ('k001', nextval('seq'), 10);
+  insert into testdb values ('k002', nextval('seq'), 10);
+  insert into testdb values ('k003', currval('seq'), 10);
 
    key    | val1 | val2 
   --------+------+------
