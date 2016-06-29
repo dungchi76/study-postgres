@@ -14,6 +14,12 @@
   Shall the new user be allowed to create more new users? (y/n) n
   CREATE USER
   ```
+  
+  Role TimeZone 설정
+  
+  ```
+  ALTER ROLE new_user SET TimeZone = 'Asia/Seoul';
+  ```
 
 * ***DB 생성***
 
