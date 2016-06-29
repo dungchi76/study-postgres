@@ -23,24 +23,34 @@
 
 * ***DB 생성***
 
-  - Simple 예제
+  - Create Database
   ```
   > createdb -O username dbname
   
   CREATE DATABASE
   ```
   
+  - Database TimeZone 설정
+  ```
+  ALTER DATABASE public.table_name SET TimeZone = 'Asia/Seoul';
+  ```
+
+  - Comment 설정
+  ```
+  COMMENT ON DATABASE dbname IS 'This is database comment.';
+  ```
+  
   - Full 예제 (Owner, Encoding, Tablespace, Comment, ... 지정 )
   ```
-  CREATE DATABASE dbname
+  CREATE DATABASE public.dbname
     WITH OWNER = username
        ENCODING = 'UTF8'
        TABLESPACE = pg_default
        LC_COLLATE = 'en_US.utf8'
        LC_CTYPE = 'en_US.utf8'
        CONNECTION LIMIT = -1;
-
-  COMMENT ON DATABASE postgres IS 'default administrative connection database';
+       
+  ALTER DATABASE public.dbname SET TimeZone = 'Asia/Seoul';
   ```
 
 * ***Table 생성***
@@ -54,11 +64,6 @@
     val3        integer default 0 not null
   )
   ``` 
-  
-  - Table TimeZone 설정
-  ```
-  ALTER DATABASE public.table_name SET TimeZone = 'Asia/Seoul';
-  ```
 
   - constraint으로 Primary Key를 설정하거나, 복수의 Primary Key는 아래와 같이 설정
   ```
