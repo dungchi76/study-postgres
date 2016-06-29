@@ -1,7 +1,7 @@
 
 #### 날짜 관련 함수 및 날짜 연산
 
-```postgresql
+```sql
 -- 오늘 (date)
 select current_date;
  
