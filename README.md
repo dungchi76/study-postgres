@@ -15,7 +15,7 @@
   CREATE USER
   ```
   
-  - 사용자 TimeZone 설정 (Sesstion 기준)
+  - 사용자 TimeZone 설정 (Sesstion - Database 보다 우선 적용)
   
   ```
   ALTER ROLE new_user SET TimeZone = 'Asia/Seoul';
