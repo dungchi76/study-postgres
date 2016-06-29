@@ -21,10 +21,9 @@
  - 어제/오늘/내일
  ```sql
  select
-   current_date - 1 "어제",
-   current_date     "오늘",
-   current_date + 1 "내일"
-   ;
+  current_date - 1 "어제",
+  current_date     "오늘",
+  current_date + 1 "내일";
    
  "2016-06-28", "2016-06-29", "2016-06-30"
  ```
