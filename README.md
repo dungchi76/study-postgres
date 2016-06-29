@@ -15,7 +15,7 @@
   CREATE USER
   ```
   
-  기본 TimeZone 설정
+  - 사용자 TimeZone 설정
   
   ```
   ALTER ROLE new_user SET TimeZone = 'Asia/Seoul';
@@ -54,6 +54,11 @@
     val3        integer default 0 not null
   )
   ``` 
+  
+  - Table TimeZone 설정
+  ```
+  ALTER DATABASE public.table_name SET TimeZone = 'Asia/Seoul';
+  ```
 
   - constraint으로 Primary Key를 설정하거나, 복수의 Primary Key는 아래와 같이 설정
   ```
