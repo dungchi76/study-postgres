@@ -182,8 +182,8 @@
 
 ### 이번달 첫날 ~ 마지막 날 (1~30)
 
- ```
  -- 이번 달 날짜 (첫날 ~ 마지막 날)
+ ```sql
  select date_trunc('month', current_date)::date + (i - 1)
  from
    generate_series(
@@ -192,7 +192,7 @@
    ) as t(i);
  ```
  또는
- ```
+ ```sql
  select date_trunc('month', current_date)::date + (i - 1)
  from
    generate_series(
