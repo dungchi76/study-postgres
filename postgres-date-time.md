@@ -223,4 +223,41 @@
  "2016-06-30";"5"
  ```
 
+### Timzone 관련
 
+ - DB Session timeznoe 설정
+
+```sql
+SET TIMEZONE TO 'UTC';
+SELECT now();
+
+SET TIMEZONE TO 'Asia/Shanghai';
+SELECT now();
+
+SET TIMEZONE TO 'Asia/Seoul';
+SELECT now();
+```
+
+ - Column에 timezone 지정
+```sql
+select 
+ now()::timestamp with time zone
+	, now()::timestamp without time zone
+	, now() at time zone 'Asia/Seoul' as seoul 			-- Time zone (Seoul)
+	, now() at time zone 'Asia/Shanghai' as china 			-- Time zone (China)
+```
+
+### Time Format 변경
+
+ - timestamp to milli-second
+
+```sql
+select extract('epoch' from now())*1000::bigint as toMillisec
+```
+
+ - milli-second to timestamp
+
+```sql
+select to_timestamp( 1467706554829.65 / 1000 )::timestamp
+select to_timestamp( 1467706554829 / 1000 )::timestamp
+```
