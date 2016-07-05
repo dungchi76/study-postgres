@@ -266,9 +266,12 @@ select to_timestamp( 1467706554829.65 / 1000 )::timestamp with time zone
 ```
 
 ```sql
-select 
-  to_timestamp( 1467706554829.65 / 1000 )::timestamp,
-  to_timestamp( 1467706554829.65 / 1000 )::timestamp with time zone
+select
+  to_timestamp( 1467706554829.65 / 1000 )::timestamp
+  , to_timestamp( 1467706554829.65 / 1000 )::timestamp at time zone 'UTC'
+  , to_timestamp( 1467706554829.65 / 1000 )::timestamp with time zone
 
-"2016-07-05 17:15:54.82965", "2016-07-05 17:15:54.82965+09"
+"2016-07-05 17:15:54.82965",	-- timestamp
+"2016-07-06 02:15:54.82965+09",	-- 'UTC'
+"2016-07-05 17:15:54.82965+09"	-- timestamp with time zone
 ```
