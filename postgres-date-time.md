@@ -258,6 +258,15 @@ select extract('epoch' from now())*1000::bigint as toMillisec
  - milli-second to timestamp
 
 ```sql
-select to_timestamp( 1467706554829.65 / 1000 )::timestamp
-select to_timestamp( 1467706554829 / 1000 )::timestamp
+select to_timestamp( 1467706554829.65 / 1000 )::timestamp with time zone
+
+"2016-07-05 17:15:54.82965+09"
+```
+
+```sql
+select 
+  to_timestamp( 1467706554829.65 / 1000 )::timestamp,
+  to_timestamp( 1467706554829.65 / 1000 )::timestamp with time zone
+
+"2016-07-05 17:15:54.82965", "2016-07-05 17:15:54.82965+09"
 ```
