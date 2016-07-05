@@ -1,5 +1,5 @@
 
-# PostgreSQL Partition Table (작업 중)
+# (정리 중) PostgreSQL Partition Table
 
 
 ```sql
