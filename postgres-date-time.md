@@ -225,7 +225,7 @@
 
 ### Timzone 관련
 
- - DB Session timeznoe 설정
+ - Session별 timeznoe 설정 (재접속 시까지 유지)
 
 ```sql
 SET TIMEZONE TO 'UTC';
@@ -238,7 +238,7 @@ SET TIMEZONE TO 'Asia/Seoul';
 SELECT now();
 ```
 
- - Column에 timezone 지정
+ - Column별 timezone 지정
 ```sql
 select 
  now()::timestamp with time zone
