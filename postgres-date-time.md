@@ -252,7 +252,9 @@ select
  - timestamp to milli-second
 
 ```sql
-select extract('epoch' from now())*1000::bigint as toMillisec
+select extract('epoch' from now())*1000::bigint
+
+1467708433654.91
 ```
 
  - milli-second to timestamp
